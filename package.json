@@ -1,10 +1,10 @@
 {
-  "name": "use-ua-root",
+  "name": "use-user-agent-root",
   "private": true,
   "scripts": {
-    "build": "pnpm -F use-ua build",
-    "dev:website": "pnpm -F use-ua-website dev",
-    "preview:website": "pnpm -F use-ua-website preview"
+    "build": "pnpm -F use-user-agent build",
+    "dev:website": "pnpm -F use-user-agent-website dev",
+    "preview:website": "pnpm -F use-user-agent-website preview"
   },
   "devDependencies": {
     "tsup": "^6.5.0",
