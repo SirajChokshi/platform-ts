@@ -5,7 +5,7 @@ export type Engine = typeof ENGINES[number];
 
 export interface UserAgentData extends Omit<IResult, "engine"> {
   engine: {
-    name: Engine;
+    name: string;
     version: string;
   };
 }

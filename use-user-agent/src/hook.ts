@@ -1,4 +1,4 @@
-import UAParser from "ua-parser-js";
+import * as UAParser from "ua-parser-js";
 import { useMemo } from "react";
 import { UseUserAgentResult } from "./types";
 
