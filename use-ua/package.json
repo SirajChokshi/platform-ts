@@ -1,0 +1,30 @@
+{
+  "name": "use-user-agent",
+  "version": "0.0.1",
+  "description": "",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src",
+    "dev": "tsup src --watch",
+    "prepublishOnly": "pnpm build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^8.10.66",
+    "@types/ua-parser-js": "^0.7.36",
+    "react": "^18.2.0"
+  },
+  "dependencies": {
+    "ua-parser-js": "^1.0.33"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2"
+  }
+}

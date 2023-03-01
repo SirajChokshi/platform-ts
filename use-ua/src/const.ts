@@ -1,0 +1,16 @@
+export const ENGINES = [
+  "Amaya",
+  "EdgeHTML",
+  "Gecko",
+  "iCab",
+  "KHTML",
+  "Links",
+  "Lynx",
+  "NetFront",
+  "NetSurf",
+  "Presto",
+  "Tasman",
+  "Trident",
+  "w3m",
+  "WebKit",
+] as const;
