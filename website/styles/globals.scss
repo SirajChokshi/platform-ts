@@ -36,7 +36,7 @@ pre:before {
   position: absolute;
   top: 0;
   height: 100%;
-  width: 32px;
+  width: 16px;
   z-index: 1;
 }
 
@@ -59,4 +59,53 @@ select {
   border: 1px solid #e5e5e5;
   border-radius: 4px;
   background-color: #fafafa;
+}
+
+.code__lang-tag {
+  position: absolute;
+  right: 16px;
+  top: 0;
+  height: 32px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+
+nav {
+  display: flex;
+  gap: 8px;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: var(--fonts-sans);
+  align-items: flex-end;
+
+  margin: 1.33rem 0;
+  font-variant: small-caps;
+}
+
+nav h1 {
+  all: unset;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+a {
+  color: #000000aa;
+}
+
+a:hover {
+  color: black;
+}
+
+a::first-letter {
+  font-size: 1.25em;
+}
+
+a[data-is-active="true"] {
+  color: #005cc5;
+  font-size: 22px;
 }

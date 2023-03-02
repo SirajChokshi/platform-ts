@@ -1,4 +1,4 @@
-import "@/styles/globals.css";
+import "@/styles/globals.scss";
 import type { AppProps } from "next/app";
 import { DM_Mono } from "next/font/google";
 import { Noto_Sans_Display } from "next/font/google";

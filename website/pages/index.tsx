@@ -1,3 +1,4 @@
+import Header from "@/components/Header";
 import { JSONBlob } from "@/components/Pre";
 import Head from "next/head";
 import Link from "next/link";
@@ -14,11 +15,7 @@ export default function Home() {
         <title>use-user-agent</title>
       </Head>
       <main>
-        <h1>
-          <code>
-            use-user-agent / <Link href="/docs">docs</Link>
-          </code>
-        </h1>
+        <Header />
         <p>
           A React hook for user-agent sniffing. It uses{" "}
           <a href="https://github.com/faisalman/ua-parser-js">ua-parser-js</a>{" "}

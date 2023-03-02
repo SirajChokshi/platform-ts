@@ -1,12 +1,37 @@
-import { PropsWithChildren, useEffect, useMemo, useState } from "react";
-import hljs, { Language } from "highlight.js";
+import { useEffect, useMemo, useState } from "react";
+import hljs from "highlight.js";
+import {
+  usePreferences,
+  PACKAGE_MANAGERS,
+  packageManager,
+} from "@/hooks/usePreferences";
 
 interface CodeProps {
   content: string;
   lang?: string;
+  tag?: boolean;
 }
 
-function Code({ content, lang }: CodeProps) {
+function PackageManagerSelect() {
+  const { packageManager, setPackageManager } = usePreferences();
+
+  return (
+    <div role="tablist">
+      {PACKAGE_MANAGERS.map((value) => (
+        <button
+          role="tab"
+          aria-selected={value === packageManager}
+          key={value}
+          onClick={() => setPackageManager(value)}
+        >
+          {value}
+        </button>
+      ))}
+    </div>
+  );
+}
+
+export function Code({ content, lang, tag = true }: CodeProps) {
   const highlighted = useMemo(() => {
     if (!lang) {
       return content;
@@ -17,14 +42,28 @@ function Code({ content, lang }: CodeProps) {
     }).value;
   }, [content, lang]);
 
-  return (
-    <pre>
+  let codeBlock = (
+    <pre className="code">
+      {tag && lang && <div className="code__lang-tag">{lang}</div>}
+
       <code
+        className="code__inner"
         dangerouslySetInnerHTML={{
           __html: highlighted,
         }}
       />
     </pre>
+  );
+
+  if (lang !== "bash") {
+    return codeBlock;
+  }
+
+  return (
+    <div className="code-with-package-manager__container">
+      <PackageManagerSelect />
+      {codeBlock}
+    </div>
   );
 }
 

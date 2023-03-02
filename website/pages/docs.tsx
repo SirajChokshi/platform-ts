@@ -1,3 +1,4 @@
+import Header from "@/components/Header";
 import Head from "next/head";
 import Link from "next/link";
 
@@ -8,11 +9,7 @@ export default function Home() {
         <title>api &middot; use-user-agent</title>
       </Head>
       <main>
-        <h1>
-          <code>
-            <Link href="/">use-user-agent</Link> / docs
-          </code>
-        </h1>
+        <Header />
         <p>
           A React hook for user-agent sniffing. It uses{" "}
           <a href="https://github.com/faisalman/ua-parser-js">ua-parser-js</a>{" "}

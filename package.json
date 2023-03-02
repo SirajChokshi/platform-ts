@@ -1,10 +1,11 @@
 {
-  "name": "use-user-agent-root",
+  "name": "platform-ts-root",
   "private": true,
   "scripts": {
-    "build": "pnpm -F use-user-agent build",
-    "dev:website": "pnpm -F use-user-agent-website dev",
-    "build:website": "pnpm -F use-user-agent-website build"
+    "build": "pnpm -F platform-ts build",
+    "build:hook": "pnpm -F use-user-agent build",
+    "dev:website": "pnpm -F platform-ts-website dev",
+    "build:website": "pnpm -F platform-ts-website build"
   },
   "devDependencies": {
     "tsup": "^6.5.0",
