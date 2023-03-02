@@ -4,7 +4,7 @@
   "scripts": {
     "build": "pnpm -F use-user-agent build",
     "dev:website": "pnpm -F use-user-agent-website dev",
-    "preview:website": "pnpm -F use-user-agent-website preview"
+    "build:website": "pnpm -F use-user-agent-website build"
   },
   "devDependencies": {
     "tsup": "^6.5.0",

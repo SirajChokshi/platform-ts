@@ -1,14 +1,24 @@
-import * as UAParser from "ua-parser-js";
+"use client";
+
+import { UAParser } from "ua-parser-js";
 import { useMemo } from "react";
-import { UseUserAgentResult } from "./types";
+import { UseUserAgentData } from "./types";
+import { formatEngine, formatOS } from "./utils";
 
-export function useUserAgent(uastring?: string): UseUserAgentResult {
+export function useUserAgent(uastring?: string): UseUserAgentData {
   const parser = useMemo(() => new UAParser(uastring), [uastring]);
-  const data = useMemo(() => parser.getResult(), [parser]);
 
-  return {
-    isLoading: false,
-    isError: false,
-    data,
-  };
+  const data = useMemo(() => {
+    const res = parser.getResult();
+
+    const { engine: originalEngine, os: originalOS, ...rest } = res;
+
+    return {
+      engine: formatEngine(originalEngine),
+      os: formatOS(originalOS),
+      ...rest,
+    };
+  }, [parser]);
+
+  return data;
 }

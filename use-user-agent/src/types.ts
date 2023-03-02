@@ -1,17 +1,46 @@
-import { IResult } from "ua-parser-js";
-import { ENGINES } from "./const";
+import { IBrowser, ICPU, IDevice, IResult } from "ua-parser-js";
+import { KNOWN_ENGINES, KNOWN_OS } from "./const";
 
-export type Engine = typeof ENGINES[number];
+export type KnownEngineNames = typeof KNOWN_ENGINES[number];
+export type KnownOSNames = typeof KNOWN_OS[number];
 
-export interface UserAgentData extends Omit<IResult, "engine"> {
-  engine: {
-    name: string;
-    version: string;
-  };
+export interface UnknownEngine {
+  name: null;
+  originalName?: string;
+  version?: string;
+  known: false;
 }
 
-export interface UseUserAgentResult {
-  isLoading: boolean;
-  isError: boolean;
-  data: UserAgentData | null;
+export interface KnownEngine {
+  name: KnownEngineNames;
+  originalName: string;
+  version?: string;
+  known: true;
+}
+
+export type Engine = UnknownEngine | KnownEngine;
+
+export interface UnknownOS {
+  name: null;
+  originalName?: string;
+  version?: string;
+  known: false;
+}
+
+export interface KnownOS {
+  name: KnownOSNames;
+  originalName: string;
+  version?: string;
+  known: true;
+}
+
+export type OS = UnknownOS | KnownOS;
+
+export interface UseUserAgentData {
+  engine: Engine;
+  os: OS;
+  cpu: ICPU;
+  browser: IBrowser;
+  device: IDevice;
+  ua: string;
 }
