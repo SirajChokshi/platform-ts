@@ -1,5 +1,6 @@
 import { UAParser } from "ua-parser-js";
 import { formatBrowser, formatEngine, formatOS } from "./utils";
+import { PlatformReaderResult } from "./types";
 
 export class PlatformReader {
   parser: UAParser;
@@ -30,6 +31,17 @@ export class PlatformReader {
 
   getUA() {
     return this.parser.getUA();
+  }
+
+  getResult(): PlatformReaderResult {
+    const res = this.parser.getResult();
+
+    return {
+      ...res,
+      engine: formatEngine(res.engine),
+      os: formatOS(res.os),
+      browser: formatBrowser(res.browser),
+    };
   }
 
   setUA(uastring: string) {

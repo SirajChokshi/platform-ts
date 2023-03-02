@@ -28,9 +28,9 @@ importers:
       '@types/node': ^8.10.66
       '@types/react': 18.0.15
       '@types/ua-parser-js': ^0.7.36
-      ua-parser-js: ^1.0.33
+      platform-ts: workspace:*
     dependencies:
-      ua-parser-js: 1.0.33
+      platform-ts: link:../platform-ts
     devDependencies:
       '@types/node': 8.10.66
       '@types/react': 18.0.15

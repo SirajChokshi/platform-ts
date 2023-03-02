@@ -1,4 +1,4 @@
-import { IBrowser, ICPU, IDevice } from "ua-parser-js";
+import { ICPU, IDevice } from "ua-parser-js";
 import { KNOWN_BROWSERS, KNOWN_ENGINES, KNOWN_OS } from "./const";
 
 export type KnownEngineNames = typeof KNOWN_ENGINES[number];
@@ -53,11 +53,11 @@ export interface KnownBrowser {
 
 export type Browser = UnknownBrowser | KnownBrowser;
 
-export interface UseUserAgentData {
+export interface PlatformReaderResult {
+  ua: string;
+  browser: Browser;
   engine: Engine;
   os: OS;
-  cpu: ICPU;
-  browser: IBrowser;
   device: IDevice;
-  ua: string;
+  cpu: ICPU;
 }

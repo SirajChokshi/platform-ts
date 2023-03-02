@@ -1,24 +1,16 @@
 "use client";
 
-import { UAParser } from "ua-parser-js";
 import { useMemo } from "react";
-import { UseUserAgentData } from "./types";
-import { formatEngine, formatOS } from "./utils";
+import { PlatformReaderResult, PlatformReader } from "platform-ts";
 
-export function useUserAgent(uastring?: string): UseUserAgentData {
-  const parser = useMemo(() => new UAParser(uastring), [uastring]);
+export function useUserAgent(
+  uastring?: string,
+  extensions?: Record<string, unknown>
+): PlatformReaderResult {
+  const result = useMemo(
+    () => new PlatformReader(uastring, extensions).getResult(),
+    [uastring, extensions]
+  );
 
-  const data = useMemo(() => {
-    const res = parser.getResult();
-
-    const { engine: originalEngine, os: originalOS, ...rest } = res;
-
-    return {
-      engine: formatEngine(originalEngine),
-      os: formatOS(originalOS),
-      ...rest,
-    };
-  }, [parser]);
-
-  return data;
+  return result;
 }
