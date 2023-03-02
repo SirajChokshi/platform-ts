@@ -36,6 +36,20 @@ export interface KnownOS {
 
 export type OS = UnknownOS | KnownOS;
 
+export interface UnknownBrowser {
+  name: null;
+  originalName?: string;
+  version?: string;
+  known: false;
+}
+
+export interface KnownBrowser {
+  name: string;
+  originalName: string;
+  version?: string;
+  known: true;
+}
+
 export interface UseUserAgentData {
   engine: Engine;
   os: OS;
