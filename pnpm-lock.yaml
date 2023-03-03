@@ -13,28 +13,24 @@ importers:
   platform-ts:
     specifiers:
       '@types/node': ^8.10.66
-      '@types/react': 18.0.15
       '@types/ua-parser-js': ^0.7.36
       ua-parser-js: ^1.0.33
     dependencies:
       ua-parser-js: 1.0.33
     devDependencies:
       '@types/node': 8.10.66
-      '@types/react': 18.0.15
       '@types/ua-parser-js': 0.7.36
 
   use-user-agent:
     specifiers:
       '@types/node': ^8.10.66
       '@types/react': 18.0.15
-      '@types/ua-parser-js': ^0.7.36
       platform-ts: workspace:*
     dependencies:
       platform-ts: link:../platform-ts
     devDependencies:
       '@types/node': 8.10.66
       '@types/react': 18.0.15
-      '@types/ua-parser-js': 0.7.36
 
   website:
     specifiers:
@@ -45,6 +41,7 @@ importers:
       eslint-config-next: 13.2.1
       highlight.js: ^11.7.0
       next: 13.2.1
+      next-themes: ^0.2.1
       platform-ts: workspace:*
       react: 18.2.0
       react-dom: 18.2.0
@@ -60,6 +57,7 @@ importers:
       eslint-config-next: 13.2.1_ycpbpc6yetojsgtrx3mwntkhsu
       highlight.js: 11.7.0
       next: 13.2.1_wiv434v7erz4aedd5whhdwmpv4
+      next-themes: 0.2.1_qgtcjgzkkjtbiyvnx7d32fl5vu
       platform-ts: link:../platform-ts
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -1948,6 +1946,18 @@ packages:
 
   /natural-compare/1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
+    dev: false
+
+  /next-themes/0.2.1_qgtcjgzkkjtbiyvnx7d32fl5vu:
+    resolution: {integrity: sha512-B+AKNfYNIzh0vqQQKqQItTS8evEouKD7H5Hj3kmuPERwddR2TxvDSFZuTj6T7Jfn1oyeUyJMydPl1Bkxkh0W7A==}
+    peerDependencies:
+      next: '*'
+      react: '*'
+      react-dom: '*'
+    dependencies:
+      next: 13.2.1_wiv434v7erz4aedd5whhdwmpv4
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
     dev: false
 
   /next/13.2.1_wiv434v7erz4aedd5whhdwmpv4:

@@ -60,7 +60,7 @@ export function Code({ content, lang, tag = true }: CodeProps) {
   }
 
   return (
-    <div className="code-with-package-manager__container">
+    <div className="code-with-tabs__container">
       <PackageManagerSelect />
       {codeBlock}
     </div>

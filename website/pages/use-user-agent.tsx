@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>api &middot; use-user-agent</title>
+        <title>react &middot; platform-ts</title>
       </Head>
       <main>
         <Header />

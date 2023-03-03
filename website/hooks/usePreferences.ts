@@ -14,8 +14,6 @@ export const COMMANDS = {
 interface UserPreferences {
   packageManager: packageManager;
   setPackageManager: (packageManager: packageManager) => void;
-  theme: "light" | "dark";
-  setTheme: (theme: "light" | "dark") => void;
 }
 
 export const usePreferences = create(
@@ -23,8 +21,6 @@ export const usePreferences = create(
     (set) => ({
       packageManager: "npm",
       setPackageManager: (packageManager) => set({ packageManager }),
-      theme: "light",
-      setTheme: (theme) => set({ theme }),
     }),
     {
       name: "platform-ts.user-preferences",

@@ -12,15 +12,15 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>use-user-agent</title>
+        <title>platform-ts</title>
       </Head>
       <main>
         <Header />
         <p>
-          A React hook for user-agent sniffing. It uses{" "}
+          A type-safe utility for user-agent sniffing. It uses{" "}
           <a href="https://github.com/faisalman/ua-parser-js">ua-parser-js</a>{" "}
-          under the hood, but provides a richer API optimized for typesafety
-          with known results.
+          under the hood, but provides a richer API optimized for the most
+          common, known results with escape hatches for the rest.
         </p>
         <select
           value={mockUA}

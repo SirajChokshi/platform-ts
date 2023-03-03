@@ -2,7 +2,7 @@ import "@/styles/globals.scss";
 import type { AppProps } from "next/app";
 import { DM_Mono } from "next/font/google";
 import { Noto_Sans_Display } from "next/font/google";
-import "highlight.js/styles/github.css";
+import { ThemeProvider } from "next-themes";
 
 const DM = DM_Mono({
   subsets: ["latin"],
@@ -23,7 +23,9 @@ export default function App({ Component, pageProps }: AppProps) {
           --fonts-sans: ${Noto.style.fontFamily};
         }
       `}</style>
-      <Component {...pageProps} />
+      <ThemeProvider>
+        <Component {...pageProps} />
+      </ThemeProvider>
     </>
   );
 }

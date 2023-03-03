@@ -1,10 +1,8 @@
 import {
   Browser,
   Engine,
-  KnownBrowser,
   KnownBrowserNames,
   KnownEngineNames,
-  KnownOS,
   KnownOSNames,
   OS,
 } from "./types";

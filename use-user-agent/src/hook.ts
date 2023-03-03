@@ -1,5 +1,3 @@
-"use client";
-
 import { useMemo } from "react";
 import { PlatformReaderResult, PlatformReader } from "platform-ts";
 
