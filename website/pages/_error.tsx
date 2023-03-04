@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import Link from "next/link";
 
 export default function Error() {
   return (
@@ -8,7 +9,8 @@ export default function Error() {
 
         <h2>404 - Page Not Found</h2>
         <p>
-          <a href="/">Go home</a> &middot; <a href="/docs">Go to docs</a>
+          <Link href="/">Go home</Link> &middot;{" "}
+          <Link href="/docs">Go to docs</Link>
         </p>
       </main>
     </body>
