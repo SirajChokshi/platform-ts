@@ -1,3 +1,3 @@
 # Website
 
-Documentation and demo website for `use-user-agent`. Built in [Next.js](https://nextjs.org/) and SCSS.
+Documentation and demo website for `platform-ts`. Built with [Next.js](https://nextjs.org/) using static exports.
