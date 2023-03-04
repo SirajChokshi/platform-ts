@@ -1,10 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import hljs from "highlight.js";
-import {
-  usePreferences,
-  PACKAGE_MANAGERS,
-  packageManager,
-} from "@/hooks/usePreferences";
+import { usePreferences, PACKAGE_MANAGERS } from "@/hooks/usePreferences";
 
 interface CodeProps {
   content: string;

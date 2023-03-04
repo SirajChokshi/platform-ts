@@ -6,6 +6,7 @@ export default function Document() {
       <Head>
         <meta name="description" content="React hook for user-agent sniffing" />
         <meta name="author" content="Siraj Chokshi" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
       <body>
         <Main />

@@ -1,13 +1,12 @@
 import Header from "@/components/Header";
 import { JSONBlob } from "@/components/Pre";
 import Head from "next/head";
-import Link from "next/link";
-import { PropsWithChildren, useEffect, useState } from "react";
+import { useState } from "react";
 import useUserAgent from "use-user-agent";
 
-export default function Home() {
+export default function Home(props: any) {
   const [mockUA, setMockUA] = useState<string | undefined>(undefined);
-  const agent = useUserAgent(mockUA);
+  const { data: agent } = useUserAgent(mockUA);
 
   return (
     <>
@@ -27,6 +26,15 @@ export default function Home() {
           onChange={(e) => setMockUA(e.target.value || undefined)}
         >
           <option value={""}>Browser Default</option>
+          <option value="Mozilla/5.0 (Windows NT 6.3; Trident/7.0; rv:11.0) like Gecko">
+            Internet Explorer 11
+          </option>
+          <option value="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.3 Safari/605.1.15">
+            Safari 14
+          </option>
+          <option value="Mozilla/5.0 (X11; Linux x86_64; rv:82.0) Gecko/20100101 Firefox/82.0">
+            Firefox 82
+          </option>
           <option value="Mozilla/5.0 (iPhone13,2; U; CPU iPhone OS 14_0 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) Version/10.0 Mobile/15E148 Safari/602.1">
             iPhone 12
           </option>

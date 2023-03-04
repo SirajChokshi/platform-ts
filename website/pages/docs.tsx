@@ -4,7 +4,6 @@ import { Code } from "@/components/Pre";
 import { H } from "@/components/Typography";
 import { COMMANDS, usePreferences } from "@/hooks/usePreferences";
 import Head from "next/head";
-import Link from "next/link";
 
 export default function Home() {
   const { packageManager } = usePreferences();
