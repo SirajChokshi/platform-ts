@@ -5,6 +5,7 @@ import {
   KnownEngineNames,
   KnownOSNames,
   OS,
+  WindowWithNavigatorUAData,
 } from "./types";
 import { KNOWN_BROWSERS, KNOWN_ENGINES, KNOWN_OS } from "./const";
 import { IBrowser, IEngine, IOS } from "ua-parser-js";
@@ -73,4 +74,18 @@ export function isKnownOS(name: string): name is KnownOSNames {
 
 export function isKnownBrowser(name: string): name is KnownBrowserNames {
   return KNOWN_BROWSERS.includes(name as KnownBrowserNames);
+}
+
+export function hasNavigatorUAData(
+  window: Window
+): window is WindowWithNavigatorUAData & {
+  navigator: Navigator & {
+    userAgentData: {
+      getHighEntropyValues: (
+        keys: string[]
+      ) => Promise<{ [key: string]: string }>;
+    };
+  };
+} {
+  return !!(window.navigator as any).userAgentData;
 }

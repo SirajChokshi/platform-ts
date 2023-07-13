@@ -74,8 +74,8 @@ if (browser.known) {
           lang="typescript"
         />
 
-        <H id="api">API</H>
-        <H id="faq">FAQ</H>
+        {/* <H id="api">API</H>
+        <H id="faq">FAQ</H> */}
       </main>
     </>
   );

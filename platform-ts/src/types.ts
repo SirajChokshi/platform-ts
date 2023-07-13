@@ -1,9 +1,9 @@
 import { ICPU, IDevice } from "ua-parser-js";
 import { KNOWN_BROWSERS, KNOWN_ENGINES, KNOWN_OS } from "./const";
 
-export type KnownEngineNames = typeof KNOWN_ENGINES[number];
-export type KnownOSNames = typeof KNOWN_OS[number];
-export type KnownBrowserNames = typeof KNOWN_BROWSERS[number];
+export type KnownEngineNames = (typeof KNOWN_ENGINES)[number];
+export type KnownOSNames = (typeof KNOWN_OS)[number];
+export type KnownBrowserNames = (typeof KNOWN_BROWSERS)[number];
 
 export interface UnknownEngine {
   name: null;
@@ -61,3 +61,17 @@ export interface PlatformReaderResult {
   device: IDevice;
   cpu: ICPU;
 }
+
+/**
+ * window definition for browsers implementing the `getHighEntropyValues`
+ * API (currently only Chrome 90+)
+ *
+ * @see https://developer.mozilla.org/en-US/docs/Web/API/NavigatorUAData/getHighEntropyValue
+ */
+export type WindowWithNavigatorUAData = Window & {
+  navigator: Navigator & {
+    userAgentData: {
+      getHighEntropyValues: (keys: string[]) => Promise<Record<string, string>>;
+    };
+  };
+};

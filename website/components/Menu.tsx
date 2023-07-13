@@ -27,12 +27,8 @@ export default function Menu() {
 
   const [links, setLinks] = useState<Item[]>([]);
 
-  console.log(links);
-
   useEffect(() => {
     const links: Item[] = [];
-
-    console.log("looking for links..");
 
     document.querySelectorAll("h2, h3").forEach((heading) => {
       const id = heading.getAttribute("id");

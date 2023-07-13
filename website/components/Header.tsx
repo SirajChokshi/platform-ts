@@ -1,7 +1,8 @@
+import { THEME_TO_LABEL, Theme, getNextTheme } from "@/utils/theme";
 import { useTheme } from "next-themes";
 import Link, { LinkProps } from "next/link";
 import { useRouter } from "next/router";
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, useEffect, useState } from "react";
 
 function NavLink(props: PropsWithChildren<LinkProps>) {
   const router = useRouter();
@@ -20,9 +21,26 @@ function NavLink(props: PropsWithChildren<LinkProps>) {
   );
 }
 
-export default function Header() {
+function ThemeButton() {
+  const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
 
+  useEffect(() => setMounted(true), []);
+
+  if (!mounted || !theme) {
+    return null;
+  }
+
+  const nextTheme = getNextTheme(theme);
+
+  return (
+    <button onClick={() => setTheme(nextTheme)}>
+      {THEME_TO_LABEL[theme as Theme]}
+    </button>
+  );
+}
+
+export default function Header() {
   return (
     <>
       <header>
@@ -33,9 +51,7 @@ export default function Header() {
           <span>&middot;</span>
           <NavLink href="/docs">docs</NavLink>
         </nav>
-        <button onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
-          {theme === "light" ? "Light" : "Dark"}
-        </button>
+        <ThemeButton />
       </header>
       <hr />
     </>
